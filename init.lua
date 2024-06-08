@@ -102,7 +102,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -542,7 +542,7 @@ require('lazy').setup({
           -- This may be unwanted, since they displace some of your code
           if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
             map('<leader>th', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled {})
             end, '[T]oggle Inlay [H]ints')
           end
         end,
