@@ -1,0 +1,18 @@
+install nerd font:
+ubuntu mono nerd font
+set as default in terminal emulator
+
+
+install nvim
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+sudo apt update
+sudo apt install make gcc ripgrep unzip git xclip neovim
+
+git clone https://github.com/FrederikFinckh/.config-nvim.git
+
+overwrite config with my config
+
+install tmux
+add my .tmux.conf to ~
+
+
