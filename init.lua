@@ -170,7 +170,6 @@ require('lazy').setup({
       { '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
       { '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
       { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
-      { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
   },
   -- Here is a more advanced example where we pass configuration
@@ -326,8 +325,6 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-
-      vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<CR>', { desc = '[T]ree toggle' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -858,6 +855,8 @@ require('lazy').setup({
     },
   },
 })
-
+-- my custom mappings
+vim.keymap.set('n', '<leader>a', ':NvimTreeToggle<CR>', { desc = '[a] nice tree' })
+vim.keymap.set('n', '<F5>', ':w<CR>:Crun<CR>', { desc = 'Refresh in rust' })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
