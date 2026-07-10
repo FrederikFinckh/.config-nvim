@@ -34,3 +34,11 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live gr
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
+vim.keymap.set('n', '<leader>tt', ':tabn<CR>', { desc = '<t>ab <t>hrough' })
+vim.keymap.set('n', '<leader>tT', ':-tabn<CR>', { desc = 'rev <t>ab <T>hrough' })
+
+--lsp integration
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('ty')
+vim.lsp.enable('lua_ls')
+
