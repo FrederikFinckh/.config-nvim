@@ -9,15 +9,23 @@ vim.opt.shiftwidth = 2 -- Number of spaces to use for each step of indentation
 vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.smartindent = true -- Smartly indent a new line
 
+
+
 -- A basic keymap to save the file
-vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" })
+vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Save file' })
 
 -- LazyVim setup
 require('config.lazy')
 
-require("nvim-tree").setup()
-
 -- colorscheme
-vim.cmd.colorscheme "catppuccin-nvim"
+vim.cmd.colorscheme 'catppuccin-nvim'
 
+require('nvim-tree').setup({})
 
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = 'toggle <e>xplorer' })
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
