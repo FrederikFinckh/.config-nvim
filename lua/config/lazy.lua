@@ -13,7 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  "folke/tokyonight.nvim",
+  "catppuccin/nvim", -- theme
   "nvim-tree/nvim-tree.lua", -- File explorer
   "nvim-treesitter/nvim-treesitter", -- Better syntax highlighting
 })
