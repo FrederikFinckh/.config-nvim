@@ -17,6 +17,10 @@ vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Save file' })
 -- LazyVim setup
 require('config.lazy')
 
+-- neovim-node-host via pnpm
+local neovim_node_host_script = vim.fn.readfile(vim.fn.exepath("neovim-node-host"))
+vim.g.node_host_prog=neovim_node_host_script[#neovim_node_host_script]:match("cmd%-shim%-target=(.+)$")
+
 -- colorscheme
 vim.cmd.colorscheme 'catppuccin-nvim'
 
@@ -29,3 +33,4 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find f
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
