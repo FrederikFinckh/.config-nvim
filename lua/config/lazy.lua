@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   'tpope/vim-fugitive', -- git integration
+  'neovim/nvim-lspconfig', -- lspconfig
   'catppuccin/nvim', -- theme
   'nvim-tree/nvim-tree.lua', -- File explorer
   'nvim-treesitter/nvim-treesitter', -- Better syntax highlighting
